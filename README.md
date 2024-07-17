@@ -24,7 +24,7 @@ Image:
 ![img.png](img.png)
 
 
-example.py just plays the parameters of a given rent vs buy simulation for as long as specified, prints out stats like teh final difference and a graph showing each year.
+example.py just plays the parameters of a given rent vs buy simulation for as long as specified, prints out stats like the final difference and a graph showing each year.
 Console:
 ```commandline
                           Metric                           Value
