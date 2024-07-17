@@ -29,19 +29,19 @@ Console:
 ```commandline
                           Metric                           Value
 0              Total Buying Cost                   225422.241345
-1             Total Renting Cost                   230227.960706
-2         Total Buy Future Value                   -50273.185781
-3        Total Rent Future Value                   -11157.561414
+1             Total Renting Cost                   383713.267844
+2         Total Buy Future Value                   136871.749967
+3        Total Rent Future Value                  -175907.355886
 4     Future Value of Investment                   207805.911957
-5   Future Value of Rent Savings                    11264.487335
-6    Future Value of Buy Savings                    13225.210181
+5   Future Value of Rent Savings                             0.0
+6    Future Value of Buy Savings                   200370.145928
 7          Future Property Value                   515385.407613
-8             Current rent price                     2509.239831
+8             Current rent price                     4182.066385
 9       Monthly mortgage payment                        1351.875
 10    Total Monthly Buying Costs                     2087.254203
-11                    Difference                    39115.624367
-12                      Decision  Renting is better than buying.
+11                    Difference                   312779.105853
+12                      Decision  Buying is better than renting.
 ```
 
 Image:
-![img_2.png](img_2.png)
+![img_3.png](img_3.png)![img_2.png](img_2.png)
