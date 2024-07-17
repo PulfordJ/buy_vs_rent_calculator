@@ -11,13 +11,14 @@ home_insurance = 1200  # Annual home insurance
 maintenance_costs = home_price * 0.01  # Annual maintenance costs
 initial_rent = 2000  # Initial guess for monthly rent
 rent_increase_rate = 0.0376  # Annual rent increase rate
-investment_return_rate = 0.07  # Annual investment return rate, nominal (inflation must be included!)
-property_price_growth_rate = 0.04  # Annual property price growth rate, nominal (inflation must be included!)
+investment_return_rate = 0.06  # Annual investment return rate, nominal (inflation must be included!)
+property_price_growth_rate = 0.03  # Annual property price growth rate, nominal (inflation must be included!)
 surveyor_fees = 3000  # One-off surveyor fees
 ground_rent = 350  # Annual ground rent
 service_charge = 3310  # Annual service charge
 upfront_mortgage_fees = 999  # One-off upfront mortgage fees
 inflation_rate = 0.02
+down_payment_liquidation_average_tax=0.2
 
 rent = 1800
 
@@ -32,7 +33,7 @@ buying_savings_over_time = []
 for year in years_range:
     result = buy_vs_rent_calculator(home_price, down_payment, mortgage_rate, home_insurance, maintenance_costs, rent,
                                     rent_increase_rate, investment_return_rate, year, property_price_growth_rate,
-                                    surveyor_fees, ground_rent, service_charge, upfront_mortgage_fees, inflation_rate)
+                                    surveyor_fees, ground_rent, service_charge, upfront_mortgage_fees, inflation_rate, down_payment_liquidation_average_tax)
     renting_savings_over_time.append(result["Total Rent Future Value"])
     buying_savings_over_time.append(result["Total Buy Future Value"])
 

@@ -3,11 +3,14 @@ from stampduty import calculateSDLT
 
 def buy_vs_rent_calculator(home_price, down_payment, mortgage_rate, home_insurance, maintenance_costs, rent,
                            rent_increase_rate, investment_return_rate, years, property_price_growth_rate, surveyor_fees,
-                           ground_rent, service_charge, upfront_mortgage_fees, inflation_rate):
+                           ground_rent, service_charge, upfront_mortgage_fees, inflation_rate, down_payment_liquidation_average_tax):
+    # Calculate gross cost of down payment
+    gross_down_payment = down_payment / (1 - down_payment_liquidation_average_tax)
+
     # Initial calculations
     loan_amount = home_price - down_payment
     stamp_duty = calculateSDLT(False, home_price)
-    one_off_costs = stamp_duty + surveyor_fees
+    one_off_costs = stamp_duty + surveyor_fees + (gross_down_payment - down_payment)
     monthly_mortgage_rate = mortgage_rate / 12
 
     monthly_mortgage_payment = (loan_amount * monthly_mortgage_rate)
@@ -54,8 +57,8 @@ def buy_vs_rent_calculator(home_price, down_payment, mortgage_rate, home_insuran
         future_property_value *= monthly_property_price_growth_multiplier
         total_monthly_buying_cost = monthly_mortgage_payment + total_monthly_buying_expenses * monthly_inflation_multipler
 
-    # Future value of down payment if invested
-    future_value_rent_initial_investment = (down_payment + one_off_costs) * (1 + investment_return_rate) ** years
+    # Future value of down payment if invested (using gross down payment)
+    future_value_rent_initial_investment = (gross_down_payment + one_off_costs) * (1 + investment_return_rate) ** years
 
     # Future property value after the given period
     future_property_value_after_years = future_property_value
