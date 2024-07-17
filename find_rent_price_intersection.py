@@ -20,7 +20,7 @@ upfront_mortgage_fees = 999  # One-off upfront mortgage fees
 inflation_rate = 0.02
 down_payment_liquidation_average_tax=0.2
 
-years = 40  # Number of years to compare
+years = 5  # Number of years to compare
 
 def find_intersection_rent(low, high, tolerance=0.01):
     while high - low > tolerance:
@@ -49,7 +49,7 @@ for year in years_range:
     result = buy_vs_rent_calculator(home_price, down_payment, mortgage_rate, home_insurance, maintenance_costs,
                                     intersection_rent, rent_increase_rate, investment_return_rate, year,
                                     property_price_growth_rate, surveyor_fees, ground_rent, service_charge,
-                                    upfront_mortgage_fees, inflation_rate)
+                                    upfront_mortgage_fees, inflation_rate, down_payment_liquidation_average_tax)
     renting_savings_over_time.append(result["Total Rent Future Value"])
     buying_savings_over_time.append(result["Total Buy Future Value"])
 
